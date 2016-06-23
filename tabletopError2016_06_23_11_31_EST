@@ -1,0 +1,91 @@
+~/catkin_ws/src/ork/src/object_recognition_core/apps$ gdb --args python ./detection -c `rospack find object_recognition_tabletop`/conf/detection.table.ros.ork --visualize
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from python...(no debugging symbols found)...done.
+(gdb) run
+Starting program: /usr/bin/python ./detection -c /home/<username>/catkin_ws/src/ork/src/tabletop/conf/detection.table.ros.ork --visualize
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+/home/<username>/catkin_ws/devel/lib/python2.7/dist-packages/ecto/__init__.py:30: RuntimeWarning: to-Python converter for boost::shared_ptr<ecto::tendril> already registered; second conversion method ignored.
+  del os_path
+/home/<username>/catkin_ws/devel/lib/python2.7/dist-packages/ecto/__init__.py:30: RuntimeWarning: to-Python converter for boost::shared_ptr<ecto::cell> already registered; second conversion method ignored.
+  del os_path
+/home/<username>/catkin_ws/devel/lib/python2.7/dist-packages/ecto/__init__.py:30: RuntimeWarning: to-Python converter for boost::shared_ptr<ecto::py::cellwrap> already registered; second conversion method ignored.
+  del os_path
+[New Thread 0x7fffd8f86700 (LWP 21326)]
+[New Thread 0x7fffd32a3700 (LWP 21332)]
+[New Thread 0x7fffd2aa2700 (LWP 21333)]
+[New Thread 0x7fffd22a1700 (LWP 21334)]
+[New Thread 0x7fffd1aa0700 (LWP 21339)]
+[New Thread 0x7fffd129f700 (LWP 21340)]
+[New Thread 0x7fffd0a9e700 (LWP 21341)]
+[New Thread 0x7fffc3fff700 (LWP 21342)]
+[New Thread 0x7fffc37fe700 (LWP 21343)]
+[ INFO] [1466691954.554208300]: Initialized ROS. node_name: /object_recognition_server
+[ INFO] [1466691956.449002252]: System already initialized. node_name: /object_recognition_server
+[New Thread 0x7fffad529700 (LWP 21348)]
+[New Thread 0x7fffacd28700 (LWP 21349)]
+[New Thread 0x7fffa3fff700 (LWP 21352)]
+[New Thread 0x7fffa37fe700 (LWP 21353)]
+[ INFO] [1466691956.498097282]: Subscribed to topic:/camera/depth_registered/camera_info [queue_size: 1][tcp_nodelay: 0]
+[Thread 0x7fffad529700 (LWP 21348) exited]
+[ INFO] [1466691956.530948535]: Subscribed to topic:/camera/rgb/camera_info [queue_size: 1][tcp_nodelay: 0]
+[Thread 0x7fffacd28700 (LWP 21349) exited]
+[ INFO] [1466691956.559474937]: Subscribed to topic:/camera/depth_registered/image_raw [queue_size: 1][tcp_nodelay: 0]
+[Thread 0x7fffa3fff700 (LWP 21352) exited]
+[ INFO] [1466691956.573229332]: Subscribed to topic:/camera/rgb/image_color [queue_size: 1][tcp_nodelay: 0]
+[Thread 0x7fffa37fe700 (LWP 21353) exited]
+^C
+Program received signal SIGINT, Interrupt.
+pthread_cond_timedwait@@GLIBC_2.3.2 () at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S:238
+238	../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S: No such file or directory.
+(gdb) where
+#0  pthread_cond_timedwait@@GLIBC_2.3.2 () at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S:238
+#1  0x00007fffd837bcfe in ecto::cell_<ecto_sensor_msgs::Subscriber_CameraInfo>::dispatch_process(ecto::tendrils const&, ecto::tendrils const&) ()
+   from /opt/ros/indigo/lib/python2.7/dist-packages/ecto_ros/ecto_sensor_msgs.so
+#2  0x00007ffff5b2569c in ecto::cell::process_with_only_these_inputs(ecto::tendrils const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#3  0x00007fffea384d72 in ecto::cell_<ecto_ros::Synchronizer>::dispatch_process(ecto::tendrils const&, ecto::tendrils const&) ()
+   from /opt/ros/indigo/lib/python2.7/dist-packages/ecto_ros/ecto_ros_main.so
+#4  0x00007ffff5b2569c in ecto::cell::process_with_only_these_inputs(ecto::tendrils const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#5  0x00007ffff5bcc0bc in ecto::graph::invoke_process(ecto::graph::graph_t&, unsigned long) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#6  0x00007ffff5bc3867 in ecto::scheduler::execute_iter(unsigned int, unsigned int, unsigned long) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#7  0x00007ffff5bc5be3 in boost::asio::detail::completion_handler<boost::_bi::bind_t<void, boost::_mfi::mf3<void, ecto::scheduler, unsigned int, unsigned int, unsigned long>, boost::_bi::list4<boost::_bi::value<ecto::scheduler*>, boost::_bi::value<unsigned int>, boost::_bi::value<unsigned int>, boost::_bi::value<unsigned long> > > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned long) ()
+   from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#8  0x00007ffff5bc69b5 in boost::asio::detail::task_io_service::do_run_one(boost::asio::detail::scoped_lock<boost::asio::detail::posix_mutex>&, boost::asio::detail::task_io_service_thread_info&, boost::system::error_code const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#9  0x00007ffff5bc73b1 in boost::asio::detail::task_io_service::run(boost::system::error_code&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#10 0x00007ffff5bc4984 in ecto::scheduler::run() () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#11 0x00007ffff5bc4a41 in ecto::scheduler::execute(unsigned int) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#12 0x00007ffff242567c in ecto::cell_<ecto::py::BlackBox>::dispatch_process(ecto::tendrils const&, ecto::tendrils const&) ()
+   from /home/<username>/catkin_ws/devel/lib/python2.7/dist-packages/ecto/ecto_main.so
+#13 0x00007ffff5b2569c in ecto::cell::process_with_only_these_inputs(ecto::tendrils const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#14 0x00007ffff5bcc0bc in ecto::graph::invoke_process(ecto::graph::graph_t&, unsigned long) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#15 0x00007ffff5bc3867 in ecto::scheduler::execute_iter(unsigned int, unsigned int, unsigned long) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#16 0x00007ffff5bc5b24 in boost::asio::detail::completion_handler<boost::_bi::bind_t<void, boost::_mfi::mf3<void, ecto::scheduler, unsigned int, unsigned int, unsigned long>, boost::_bi::list4<boost::_bi::value<ecto::scheduler*>, boost::_bi::value<int>, boost::_bi::value<unsigned int>, boost::_bi::value<int> > > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned long) ()
+   from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#17 0x00007ffff5bc69b5 in boost::asio::detail::task_io_service::do_run_one(boost::asio::detail::scoped_lock<boost::asio::detail::posix_mutex>&, boost::asio::detail::task_io_service_thread_info&, boost::system::error_code const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#18 0x00007ffff5bc73b1 in boost::asio::detail::task_io_service::run(boost::system::error_code&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#19 0x00007ffff5bc4984 in ecto::scheduler::run() () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#20 0x00007ffff5bc4a41 in ecto::scheduler::execute(unsigned int) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#21 0x00007ffff242567c in ecto::cell_<ecto::py::BlackBox>::dispatch_process(ecto::tendrils const&, ecto::tendrils const&) ()
+   from /home/<username>/catkin_ws/devel/lib/python2.7/dist-packages/ecto/ecto_main.so
+#22 0x00007ffff5b2569c in ecto::cell::process_with_only_these_inputs(ecto::tendrils const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#23 0x00007ffff5bcc0bc in ecto::graph::invoke_process(ecto::graph::graph_t&, unsigned long) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#24 0x00007ffff5bc3867 in ecto::scheduler::execute_iter(unsigned int, unsigned int, unsigned long) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#25 0x00007ffff5bc5b24 in boost::asio::detail::completion_handler<boost::_bi::bind_t<void, boost::_mfi::mf3<void, ecto::scheduler, unsigned int, unsigned int, unsigned long>, boost::_bi::list4<boost::_bi::value<ecto::scheduler*>, boost::_bi::value<int>, boost::_bi::value<unsigned int>, boost::_bi::value<int> > > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned long) ()
+   from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#26 0x00007ffff5bc69b5 in boost::asio::detail::task_io_service::do_run_one(boost::asio::detail::scoped_lock<boost::asio::detail::posix_mutex>&, boost::asio::detail::task_io_service_thread_info&, boost::system::error_code const&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#27 0x00007ffff5bc73b1 in boost::asio::detail::task_io_service::run(boost::system::error_code&) () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+#28 0x00007ffff5bc4984 in ecto::scheduler::run() () from /home/<username>/catkin_ws/devel/lib/libecto.so.0.6
+---Type <return> to continue, or q <return> to quit---
