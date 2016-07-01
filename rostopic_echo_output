@@ -1,0 +1,46 @@
+rostopic echo -n 1 /camera/rgb/camera_info
+header: 
+  seq: 11698
+  stamp: 
+    secs: 1467396382
+    nsecs: 875344635
+  frame_id: camera_rgb_optical_frame
+height: 480
+width: 640
+distortion_model: plumb_bob
+D: [0.2200398494247881, -0.3930574124799457, 0.00123041356734596, -0.002186961612521666, 0.0]
+K: [542.6720562823343, 0.0, 316.3412537156559, 0.0, 544.7258867953584, 263.9079114101403, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [557.9262084960938, 0.0, 314.5471111838888, 0.0, 0.0, 560.8162841796875, 263.8072143800418, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi: 
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+---
+
+
+rostopic echo -n 1 /camera/rgb/image_color
+header:
+  seq: 15616
+  stamp:
+    secs: 1467396514
+    nsecs:  95203923
+  frame_id: camera_rgb_optical_frame
+height: 480
+width: 640
+encoding: bgr8
+is_bigendian: 0
+step: 1920
+data: [99, 102, 108, 99, 102, 108, 97, 101, 107, 97, 101, 107, 97, 101,............., 175, 178, 185, 176, 178, 184, 177, 177, 184, 179, 176, 184, 180, 175, 184, 180, 175, 184]
+---
+
+
+rostopic echo -n 1 /camera/depth_registered/camera_info
+~~no output~~
+
+rostopic echo -n 1 /camera/depth_registered/image_raw
+~~no output~~
