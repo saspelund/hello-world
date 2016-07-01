@@ -1,0 +1,38 @@
+rostopic hz /camera/depth_registered/camera_info
+subscribed to [/camera/depth_registered/camera_info]
+~~no other output~~
+
+rostopic hz /camera/rgb/image_color
+subscribed to [/camera/rgb/image_color]
+average rate: 30.127
+	min: 0.028s max: 0.040s std dev: 0.00351s window: 29
+average rate: 30.048
+	min: 0.028s max: 0.040s std dev: 0.00296s window: 59
+average rate: 30.010
+	min: 0.028s max: 0.041s std dev: 0.00292s window: 89
+average rate: 30.036
+	min: 0.027s max: 0.041s std dev: 0.00284s window: 119
+average rate: 30.036
+	min: 0.027s max: 0.041s std dev: 0.00281s window: 149
+average rate: 30.012
+	min: 0.027s max: 0.041s std dev: 0.00279s window: 179
+^Caverage rate: 30.007
+	min: 0.010s max: 0.057s std dev: 0.00356s window: 205
+
+
+rostopic hz /camera/depth_registered/image_raw
+subscribed to [/camera/depth_registered/image_raw]
+~~no other output~~
+
+rostopic hz /camera/rgb/camera_info
+subscribed to [/camera/rgb/camera_info]
+average rate: 31.751
+	min: 0.010s max: 0.068s std dev: 0.01209s window: 31
+average rate: 30.828
+	min: 0.005s max: 0.068s std dev: 0.01244s window: 61
+average rate: 30.508
+	min: 0.005s max: 0.068s std dev: 0.01185s window: 91
+average rate: 30.172
+	min: 0.005s max: 0.074s std dev: 0.01248s window: 120
+^Caverage rate: 30.039
+	min: 0.000s max: 0.089s std dev: 0.01381s window: 137
