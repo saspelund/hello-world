@@ -1,0 +1,6 @@
+rosrun rviz rviz
+[ INFO] [1467381843.581958619]: rviz version 1.11.14
+[ INFO] [1467381843.582077680]: compiled against Qt version 4.8.6
+[ INFO] [1467381843.582100905]: compiled against OGRE version 1.8.1 (Byatis)
+[ INFO] [1467381844.513754881]: Stereo is NOT SUPPORTED
+[ INFO] [1467381844.513967094]: OpenGl version: 3 (GLSL 1.3).
