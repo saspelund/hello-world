@@ -1,0 +1,99 @@
+roslaunch openni_launch openni.launch
+... logging to /home/<username>/.ros/log/8c568d9c-3f94-11e6-a202-e0b9a5d94c58/roslaunch-<username>-Asus-22853.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://<username>-Asus:38393/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /camera/camera_nodelet_manager/num_worker_threads: 4
+ * /camera/depth_rectify_depth/interpolation: 0
+ * /camera/depth_registered_rectify_depth/interpolation: 0
+ * /camera/disparity_depth/max_range: 4.0
+ * /camera/disparity_depth/min_range: 0.5
+ * /camera/disparity_registered_hw/max_range: 4.0
+ * /camera/disparity_registered_hw/min_range: 0.5
+ * /camera/disparity_registered_sw/max_range: 4.0
+ * /camera/disparity_registered_sw/min_range: 0.5
+ * /camera/driver/depth_camera_info_url: 
+ * /camera/driver/depth_frame_id: camera_depth_opti...
+ * /camera/driver/depth_registration: False
+ * /camera/driver/device_id: #1
+ * /camera/driver/rgb_camera_info_url: 
+ * /camera/driver/rgb_frame_id: camera_rgb_optica...
+ * /rosdistro: indigo
+ * /rosversion: 1.11.19
+
+NODES
+  /camera/
+    camera_nodelet_manager (nodelet/nodelet)
+    debayer (nodelet/nodelet)
+    depth_metric (nodelet/nodelet)
+    depth_metric_rect (nodelet/nodelet)
+    depth_points (nodelet/nodelet)
+    depth_rectify_depth (nodelet/nodelet)
+    depth_registered_hw_metric_rect (nodelet/nodelet)
+    depth_registered_metric (nodelet/nodelet)
+    depth_registered_rectify_depth (nodelet/nodelet)
+    depth_registered_sw_metric_rect (nodelet/nodelet)
+    disparity_depth (nodelet/nodelet)
+    disparity_registered_hw (nodelet/nodelet)
+    disparity_registered_sw (nodelet/nodelet)
+    driver (nodelet/nodelet)
+    points_xyzrgb_hw_registered (nodelet/nodelet)
+    points_xyzrgb_sw_registered (nodelet/nodelet)
+    rectify_color (nodelet/nodelet)
+    rectify_ir (nodelet/nodelet)
+    rectify_mono (nodelet/nodelet)
+    register_depth_rgb (nodelet/nodelet)
+  /
+    camera_base_link (tf/static_transform_publisher)
+    camera_base_link1 (tf/static_transform_publisher)
+    camera_base_link2 (tf/static_transform_publisher)
+    camera_base_link3 (tf/static_transform_publisher)
+
+ROS_MASTER_URI=http://localhost:11311
+
+core service [/rosout] found
+process[camera/camera_nodelet_manager-1]: started with pid [22871]
+process[camera/driver-2]: started with pid [22872]
+process[camera/debayer-3]: started with pid [22873]
+process[camera/rectify_mono-4]: started with pid [22874]
+process[camera/rectify_color-5]: started with pid [22875]
+process[camera/rectify_ir-6]: started with pid [22876]
+process[camera/depth_rectify_depth-7]: started with pid [22877]
+process[camera/depth_metric_rect-8]: started with pid [22878]
+process[camera/depth_metric-9]: started with pid [22879]
+process[camera/depth_points-10]: started with pid [22880]
+process[camera/register_depth_rgb-11]: started with pid [22881]
+process[camera/points_xyzrgb_sw_registered-12]: started with pid [22882]
+process[camera/depth_registered_sw_metric_rect-13]: started with pid [22883]
+process[camera/depth_registered_rectify_depth-14]: started with pid [22884]
+process[camera/points_xyzrgb_hw_registered-15]: started with pid [22885]
+process[camera/depth_registered_hw_metric_rect-16]: started with pid [22886]
+process[camera/depth_registered_metric-17]: started with pid [22887]
+process[camera/disparity_depth-18]: started with pid [22888]
+process[camera/disparity_registered_sw-19]: started with pid [22889]
+process[camera/disparity_registered_hw-20]: started with pid [22890]
+process[camera_base_link-21]: started with pid [22891]
+process[camera_base_link1-22]: started with pid [22892]
+process[camera_base_link2-23]: started with pid [22893]
+process[camera_base_link3-24]: started with pid [22894]
+[ INFO] [1467381815.128793088]: Initializing nodelet with 4 worker threads.
+Warning: USB events thread - failed to set priority. This might cause loss of data...
+Warning: USB events thread - failed to set priority. This might cause loss of data...
+[ INFO] [1467381819.427607235]: Number devices connected: 1
+[ INFO] [1467381819.427786703]: 1. device on bus 002:22 is a SensorKinect (2ae) from PrimeSense (45e) with serial id 'A00361901353134A'
+[ INFO] [1467381819.428982668]: Searching for device with index = 1
+[ INFO] [1467381819.686365410]: Opened 'SensorKinect' on bus 2:22 with serial number 'A00361901353134A'
+[ INFO] [1467381820.734290919]: rgb_frame_id = 'camera_rgb_optical_frame' 
+[ INFO] [1467381820.734423852]: depth_frame_id = 'camera_depth_optical_frame' 
+[ WARN] [1467381924.714763089]: TF2 exception:
+Lookup would require extrapolation into the future.  Requested time 1467381924.686612505 but the latest data is at time 1467381924.684973748, when looking up transform from frame [camera_depth_optical_frame] to frame [camera_rgb_optical_frame]
+
+
+That last line repeats quite often
